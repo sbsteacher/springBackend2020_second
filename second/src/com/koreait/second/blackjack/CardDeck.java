@@ -11,7 +11,11 @@ public class CardDeck {
 	private void init() {
 		for(int i=0; i<Card.PATTERNS.length; i++) {
 			for(int z=1; z<=13; z++) {				
-				arr.add(new Card(Card.PATTERNS[i], getDeno(z)));
+				//arr.add(new Card(Card.PATTERNS[i], getDeno(z)));
+				String pattern = Card.PATTERNS[i];
+				String deno = getDeno(z);
+				Card c = new Card(pattern, deno);
+				arr.add(c);
 			}
 		}
 	}
@@ -24,7 +28,27 @@ public class CardDeck {
 			default: return String.valueOf(num);
 		}
 	}
+	/*
+	public Card getCard() {
+		int rIdx = (int)(Math.random() * arr.size());		
+		Card c = arr.get(rIdx);
+		arr.remove(rIdx);		
+		return c;
+	}
+	*/
+	public Card getCard() {
+		int rIdx = (int)(Math.random() * arr.size());
+		return arr.remove(rIdx);
+	}
 	
+	@Override
+	public String toString() {
+		String str = "";
+		for(Card c : arr) {
+			str += (c + "\n");
+		}
+		return str;
+	}
 }
 
 
