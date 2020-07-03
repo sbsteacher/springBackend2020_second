@@ -40,7 +40,7 @@ public class Gugudan {
 		rArr = Utils.createRandomArrNoDuplication(5, 15, 11);
 		Utils.printArr(rArr); 
 		
-		String star = makeStarTriangle(5); //결과값 문자열로 넘기기
+		String star = makeStarTriangle(8); //결과값 문자열로 넘기기
 		System.out.println(star);
 		// "*\n**\n***\n****\n*****\n"
 		
@@ -49,6 +49,18 @@ public class Gugudan {
 		//***
 		//****
 		//*****
+	}
+	
+	public static String makeStarTriangle(int star) {
+		String str = "";
+		for(int i=0; i<star; i++) {
+			for(int z=0; z<=i; z++) {
+				str += "*";
+			}
+			str += "\n";
+		}
+		
+		return str;
 	}
 
 	public static int sum(int...arr) {
