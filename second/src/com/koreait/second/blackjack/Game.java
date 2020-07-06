@@ -5,10 +5,18 @@ public class Game {
 	public static void main(String[] args) {
 		
 		CardDeck cd = new CardDeck();		
-		Card c = cd.getCard(); 
-		//랜덤한 카드를 1장 리턴 and 카드덱에서 리턴한 카드 삭제
-		System.out.println(c);
-		System.out.println(cd);
+		Card c = cd.getCard();
+				
+		Gamer gamer = new Gamer();
+		Card card = cd.getCard();
+		gamer.receiveCard(card);
+		
+		gamer.receiveCard(cd.getCard());
+		gamer.receiveCard(cd.getCard());
+		gamer.receiveCard(cd.getCard());
+		gamer.receiveCard(cd.getCard());
+		
+		gamer.openCards();
 		
 	}
 
