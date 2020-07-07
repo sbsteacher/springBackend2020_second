@@ -3,22 +3,18 @@ package com.koreait.second.blackjack;
 public class Game {
 
 	public static void main(String[] args) {
-		
-		CardDeck cd = new CardDeck();		
-		Card c = cd.getCard();
-				
-		Gamer gamer = new Gamer();
+		CardDeck cd = new CardDeck();
 		Dealer dealer = new Dealer();
-		Card card = cd.getCard();
-		gamer.receiveCard(card);
+		Gamer gamer = new Gamer();
 		
-		gamer.receiveCard(cd.getCard());
-		gamer.receiveCard(cd.getCard());
-		gamer.receiveCard(cd.getCard());
-		gamer.receiveCard(cd.getCard());
-		
-		gamer.openCards();
-		
+		for(int i=0; i<2; i++) {
+			dealer.receiveCard(cd.getCard());
+			gamer.receiveCard(cd.getCard());
+		}
+		dealer.moreCards(cd);		
+		gamer.moreCards(cd);	
+		dealer.openCards();
+		Rule.whoIsWin(gamer, dealer);		
 	}
 
 }
