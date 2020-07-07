@@ -8,6 +8,7 @@ public class Game {
 		Card c = cd.getCard();
 				
 		Gamer gamer = new Gamer();
+		Dealer dealer = new Dealer();
 		Card card = cd.getCard();
 		gamer.receiveCard(card);
 		

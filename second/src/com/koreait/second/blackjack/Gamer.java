@@ -1,13 +1,14 @@
 package com.koreait.second.blackjack;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+
 
 public class Gamer {
 	private List<Card> arr;	
 	
 	public Gamer() {
-		arr = new ArrayList();
+		arr = new LinkedList();
 	}
 	
 	public void receiveCard(Card card) {
