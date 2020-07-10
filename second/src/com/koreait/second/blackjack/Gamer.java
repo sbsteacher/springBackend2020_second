@@ -33,8 +33,7 @@ public class Gamer {
 
 	public void moreCards(CardDeck cd) {
 		Scanner scan = new Scanner(System.in);
-		
-		
+				
 		while(true) {
 			openCards();
 			System.out.print("카드를 더 받으시겠습니까? (y/n)");
